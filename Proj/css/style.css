@@ -381,8 +381,6 @@ button {
      bottom: 23px;
      right: 28px;
      width: 280px;
-     float: left;
-     object-position: left;
    }
    
    /* The popup form - hidden by default */
