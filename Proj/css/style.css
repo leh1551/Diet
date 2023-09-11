@@ -48,7 +48,7 @@ body {
      font-family: 'Poppins', sans-serif;
      line-height: 1.80857;
      font-weight: normal;
-     background-image: url(/Proj/images/fundo.jpeg);
+     
 }
 
 a {
@@ -313,7 +313,7 @@ button {
 
 .header {
      width: 100%;
-     background: #eae9e4;
+     background: #045318;
      padding: 20px 30px;
 }
 
@@ -329,8 +329,9 @@ button {
 /** banner section **/
 
 .banner_main {
-     background: #eae9e4;
+     background: transparent;
      padding: 20px 0px 90px 0px;
+     background-image: url(/Proj/images/fundo.jpeg);
 }
 
 .text-bg {
@@ -499,8 +500,8 @@ button {
      flex-wrap: wrap;
 }
 
-.yellow {
-     color: #f6b219;
+.green {
+     color: #1aaa06;
      font-weight: bold;
 }
 
