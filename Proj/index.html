@@ -33,6 +33,22 @@
    </head>
    <!-- body -->
    <body class="main-layout">
+      <!--Botão logar-->
+      <button class="open-button" onclick="openForm()">Logar</button>
+      <div class="form-popup" id="myForm">
+         <form action="" class="form-container"> <!-- precisa realizar ação do form-->
+           <h1>Login</h1>
+       
+           <label for="email"><b>Email</b></label>
+           <input type="text" placeholder="Email" name="email" required>
+       
+           <label for="psw"><b>Senha</b></label>
+           <input type="password" placeholder="Senha" name="psw" required>
+       
+           <button type="submit" class="btn">Login</button>
+           <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+         </form>
+      </div>
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
@@ -71,7 +87,7 @@
                                  <a class="nav-link" href="#">Contato </a>
                               </li>
                            </ul>
-                           <div class="Call"><a href="#"> <span class="yellow">Ligue : </span>12345677890</a></div>
+                           <div class="Call"><a href="#"> <span class="green">Ligue : </span>12345677890</a></div>
                         </div>
                      </nav>
                   </div>
@@ -82,21 +98,7 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- banner -->
-      <button class="open-button" onclick="openForm()">Logar</button>
-      <div class="form-popup" id="myForm">
-         <form action="/action_page.php" class="form-container"> <!-- precisa realizar ação do form-->
-           <h1>Login</h1>
-       
-           <label for="email"><b>Email</b></label>
-           <input type="text" placeholder="Email" name="email" required>
-       
-           <label for="psw"><b>Senha</b></label>
-           <input type="password" placeholder="Senha" name="psw" required>
-       
-           <button type="submit" class="btn">Login</button>
-           <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
-         </form>
-      </div>
+
       <section class="banner_main">
          <div class="container">
          <div class="row d_flex">
@@ -110,7 +112,7 @@
             <div class="col-md-6">
                <form id="request" class="main_form">
                   <div class="row">
-                     <h1 class="yellow">Crie sua conta!</h1>
+                     <h1 class="green">Crie sua conta!</h1>
                      <div class="col-md-12 ">
                         <input class="cadastro" placeholder="Nome completo" type="type" name="Nome completo"> 
                      </div>
@@ -150,7 +152,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2> <strong class="yellow">Food </strong>Packages</h2>
+                     <h2> <strong class="green">Food </strong>Packages</h2>
                      <span>There are many variations of passages of Lorem Ipsum available, but the majorityomised words which don't look 
                      even slightly believable</span>
                   </div>
@@ -188,7 +190,7 @@
                <div class="col-md-12">
                   <div class="titlepage">
                      <span>How it works</span>
-                     <h2> <strong class="yellow">3 Step For </strong>Healthy Eating</h2>
+                     <h2> <strong class="green">3 Step For </strong>Healthy Eating</h2>
                   </div>
                </div>
             </div>
@@ -221,7 +223,7 @@
                <div class="col-md-7">
                   <div class="padding_lert">
                      <div class="titlepage">
-                        <h2> <strong class="yellow">Clients  </strong>says</h2>
+                        <h2> <strong class="green">Clients  </strong>says</h2>
                      </div>
                      <div id="myCarousel" class="carousel slide clients_Carousel " data-ride="carousel">
                         <ol class="carousel-indicators">
