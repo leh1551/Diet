@@ -502,7 +502,10 @@ button {
      color: #1aaa06;
      font-weight: bold;
 }
-
+.green {
+     color: #104e08;
+     font-weight: bold;
+}
 .read_more {
      font-size: 17px;
      background-color: #000;
