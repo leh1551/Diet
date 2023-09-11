@@ -33,107 +33,85 @@
    </head>
    <!-- body -->
    <body class="main-layout" style="background-size:contain;    background-image: url('images/fundo.jpeg');">
-      <!--Botão logar-->
-      <button class="open-button" onclick="openForm()">Logar</button>
-      <div class="form-popup" id="myForm">
-         <form action="" class="form-container"> <!-- precisa realizar ação do form-->
-           <h1>Login</h1>
-       
-           <label for="email"><b>Email</b></label>
-           <input type="text" placeholder="Email" name="email" required>
-       
-           <label for="psw"><b>Senha</b></label>
-           <input type="password" placeholder="Senha" name="psw" required>
-       
-           <button type="submit" class="btn">Login</button>
-           <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
-         </form>
-      </div>
+      
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
-      <header>
-         <!-- header inner -->
-         <div class="header">
-            <div class="container">
-               <div class="row">
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                     <div class="full">
-                        <div class="center-desk">
-                           <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                           </div>
+      <div class="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo">
+                           <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                         </div>
                      </div>
                   </div>
-                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item">
-                                 <a class="nav-link" href="index.html">Home </a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="sobre.html">Sobre </a>
-                              </li>
-                              <!-- </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Screenshort</a>
-                              </li>
-                              -->
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#">Contato </a>
-                              </li>
-                           </ul>
-                           <div class="Call"><a href="#"> <span class="green">Ligue : </span>12345677890</a></div>
-                        </div>
-                     </nav>
-                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <!-- </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Screenshort</a>
+                           </li>
+                           -->
+                           <li class="nav-item">
+                              <a class="nav-link" href="" target="blank">Perfil </a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="https://instagram.com/mais_musculos_diet?igshid=NjIwNzIyMDk2Mg==" target="blank">Instagram </a>
+                           </li>
+                        </ul>
+                        <div class="Call"><a href="#"> <span class="green">Ligue : </span>12345677890</a></div>
+                     </div>
+                  </nav>
                </div>
             </div>
          </div>
-      </header>
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- banner -->
+      </div>
+   </header>
 
       <section class="banner_main">
          <div class="container">
          <div class="row d_flex">
             <div class="col-md-6">
                <div class="text-bg">
-                  <h1>PlusDiet</h1>
+                  <h1>Mais Musculos Diet</h1>
                   <p>Texto grande aqui</p>
                   <a class="read_more" href="sobre.html">Leia mais</a>
                </div>
             </div>
             <div class="col-md-6">
-               <form id="request" class="main_form">
+               <form id="request" class="main_form" action="https://webhook.site/f3cb03cf-a1b1-41c7-9717-f088da7a4c14" target="blank"
+                method="post" onsubmit="return validarForm()">
                   <div class="row">
                      <h1 class="green2">Crie sua conta!</h1>
                      <div class="col-md-12 ">
-                        <input class="cadastro" placeholder=" Nome completo" type="text" name="Nome completo"> 
+                        <input class="cadastro" id="nome" placeholder=" Nome completo" type="text" name="Nome completo"> 
                      </div>
                      <div class="col-md-12">
-                        <input class="cadastro" placeholder=" Email" type="email" name="Email"> 
+                        <input class="cadastro" id="email" placeholder=" Email" type="email" name="Email"> 
                      </div>
                      <div class="col-md-12">
-                        <input class="cadastro" placeholder=" CPF" type="number" name="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">                          
+                        <input class="cadastro" id="cpf" placeholder=" CPF" type="number" name="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">                          
                      </div>
                      <div class="col-md-12">
-                        <input class="cadastro" placeholder=" Celular" type="number" name="Celular" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})">                          
+                        <input class="cadastro" id="celular" placeholder=" Celular" type="number" name="Celular" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})">                          
                      </div>
                      <div class="col-md-12">
-                        <input class="cadastro" placeholder=" Senha" type="password" name="Senha">                          
+                        <input class="cadastro" id="senha" placeholder=" Senha" type="password" name="Senha">                          
                      </div>
                      <div class="col-md-12">
-                        <input class="cadastro" placeholder=" Confirme sua senha" type="password" name="Confirme sua senha">                          
+                        <input class="cadastro" id="confirm_senha"placeholder=" Confirme sua senha" type="password" name="Confirme sua senha">                          
                      </div>
 
                       <!--
@@ -145,6 +123,35 @@
                      </div>
                   </div>
                </form>
+               <script>  //inicio do codigo javaa para o cadrasto
+                  function validarForm() {
+                      // Obtém os valores dos campos
+                      var nome = document.getElementById("nome").value;
+                      var email = document.getElementById("email").value;
+                      var cpf = document.getElementById("cpf").value;
+                      var celular = document.getElementById("celular").value;
+                      var senha = document.getElementById("senha").value;
+                      var confirm_senha = document.getElementById("confirm_senha").value;
+          
+                      // Verifica se as senhas coincidem
+                      if (senha !== confirm_senha) {
+                          alert("As senhas não coincidem.");
+                          return false; // Impede o envio do formulário
+                      }
+          
+                      // Verifica se todos os campos estão preenchidos
+                      if (nome === "" || email === "" || cpf === "" || celular === "" || senha === "" || confirm_senha === "") {
+                          alert("Todos os campos devem ser preenchidos.");
+                          return false; // Impede o envio do formulário
+                      }
+          
+                      // Adicione outras validações conforme necessário
+          
+                      // Se todas as validações passarem, o formulário será enviado
+                      return true;
+                  }
+              </script>   
+              <!--fim do codogo java de cadrasto-->
             </div>
          </div>
       </section>
@@ -326,6 +333,22 @@
                   </div>
                </div>
             </div> footer -->
+            <!--Botão logar-->
+      <button class="open-button" onclick="openForm()">Logar</button>
+      <div class="form-popup" id="myForm">
+         <form action="" class="form-container"  > <!-- precisa realizar ação do form-->
+           <h1>Login</h1>
+       
+           <label for="email"><b>Email</b></label>
+           <input type="text" placeholder="Email" name="email" required>
+       
+           <label for="psw"><b>Senha</b></label>
+           <input type="password" placeholder="Senha" name="psw" required>
+       
+           <button type="submit" class="btn">Login</button>
+           <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+         </form>
+      </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">

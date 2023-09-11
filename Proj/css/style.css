@@ -317,12 +317,15 @@ button {
      padding: 20px 30px;
 }
 
-.logo a {
+.logo img {
      font-size: 40px;
      font-weight: bold;
      text-transform: uppercase;
      color: #fff;
      line-height: 40px;
+     width: 80px;
+     border-radius: 50%;
+     
 }
 
 
@@ -371,7 +374,7 @@ button {
      border-bottom: #fff solid 1px;
 }
 .open-button {
-     background-color: #c01f1f;
+     background-color: green;
      color: white;
      padding: 16px 20px;
      border: none;
@@ -379,8 +382,10 @@ button {
      opacity: 0.8;
      position: fixed;
      bottom: 23px;
-     right: 28px;
-     width: 280px;
+     left: 20px;
+     width: 400px;
+     
+    
    }
    
    /* The popup form - hidden by default */
@@ -466,7 +471,7 @@ button {
 }
 
 .main_form .send_btn:hover {
-     background-color: #eda911;
+     background-color: green;
      transition: ease-in all 0.5s;
      color: #000;
 }
