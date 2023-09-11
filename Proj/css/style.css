@@ -805,9 +805,10 @@ button {
 }
 
 .copyright {
-     margin-top: 90px;
+     margin-top: -200px;
      padding: 20px 0px;
      background-color: #26582a;
+     position: relative;
 }
 
 .copyright p {
