@@ -65,13 +65,28 @@
                            </li>
                            -->
                            <li class="nav-item">
-                              <a class="nav-link" href="" target="blank">Perfil </a>
+                              <a class="nav-link" href="perfil.html" target="blank">Perfil </a>
                            </li>
                            <li class="nav-item">
                               <a class="nav-link" href="https://instagram.com/mais_musculos_diet?igshid=NjIwNzIyMDk2Mg==" target="blank">Instagram </a>
                            </li>
                         </ul>
-                        <div class="Call"><a href="#"> <span class="green">Ligue : </span>12345677890</a></div>
+                        <div class="Call"><button class="botao" onclick="openForm()">Logar</button>
+                           <div class="form-popup" id="myForm">
+                              <form action="" class="form-container"  > <!-- precisa realizar ação do form-->
+                                <h1>Login</h1>
+                            
+                                <label for="email"><b>Email</b></label>
+                                <input type="text" placeholder="Email" name="email" required>
+                            
+                                <label for="psw"><b>Senha</b></label>
+                                <input type="password" placeholder="Senha" name="psw" required>
+                            
+                                <button type="submit" class="btn">Login</button>
+                                <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+                              </form>
+                           </div>
+                        </div>
                      </div>
                   </nav>
                </div>
@@ -91,7 +106,7 @@
                </div>
             </div>
             <div class="col-md-6">
-               <form id="request" class="main_form" action="https://webhook.site/f3cb03cf-a1b1-41c7-9717-f088da7a4c14" target="blank"
+               <form id="request" class="main_form" action="https://webhook.site/a7dadecd-5dc0-4c8d-8f67-d44fe8870db4" target="blank"
                 method="post" onsubmit="return validarForm()">
                   <div class="row">
                      <h1 class="green2">Crie sua conta!</h1>
@@ -148,6 +163,7 @@
                       // Adicione outras validações conforme necessário
           
                       // Se todas as validações passarem, o formulário será enviado
+                      alert("Cadastrado com sucesso");
                       return true;
                   }
               </script>   
@@ -326,7 +342,7 @@
                <div class="row">
                   <div class="col-md-8 offset-md-2">
                      <div class="cont">
-                        <h3> DietPlus  <br> Pagina principal</h3>
+                        <h3> Mais Músculos Masculino Diet  <br> Pagina principal</h3>
                         <p></p>
                      </div>
                      
@@ -334,26 +350,12 @@
                </div>
             </div> footer -->
             <!--Botão logar-->
-      <button class="open-button" onclick="openForm()">Logar</button>
-      <div class="form-popup" id="myForm">
-         <form action="" class="form-container"  > <!-- precisa realizar ação do form-->
-           <h1>Login</h1>
-       
-           <label for="email"><b>Email</b></label>
-           <input type="text" placeholder="Email" name="email" required>
-       
-           <label for="psw"><b>Senha</b></label>
-           <input type="password" placeholder="Senha" name="psw" required>
-       
-           <button type="submit" class="btn">Login</button>
-           <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
-         </form>
-      </div>
+      
             <div class="copyright">
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>DietPlus - Pagina Principal</a></p>
+                        <p>Mais Músculos Masculino Diet - Pagina Principal</a></p>
                      </div>
                   </div>
                </div>

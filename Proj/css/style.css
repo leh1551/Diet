@@ -286,6 +286,16 @@ button {
      text-transform: uppercase;
 }
 
+.botao{
+     padding: 0 25px;
+     color: #11ed6d;
+     font-size: 16px;
+     line-height: 20px;
+     font-weight: 500;
+     text-transform: uppercase;
+     background-color: transparent;
+}
+
 .navbar-dark .navbar-nav .nav-link:focus,
 .navbar-dark .navbar-nav .nav-link:hover {
      color: #6fd356 !important;
@@ -391,11 +401,10 @@ button {
    /* The popup form - hidden by default */
    .form-popup {
      display: none;
-     position: fixed;
-     bottom: 0;
      right: 15px;
-     border: 3px solid #f1f1f1;
+     border: 3px solid #043b15;
      z-index: 9;
+     position: absolute;
    }
    
    /* Add styles to the form container */
