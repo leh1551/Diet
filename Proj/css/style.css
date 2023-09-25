@@ -828,7 +828,9 @@ align-items: center;
      margin-top: 90px;
      padding: 20px 0px;
      background-color: #26582a;
-     
+     position:fixed;
+     bottom: 0;
+     width: 100%;
 }
 
 .copyright p {
