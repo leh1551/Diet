@@ -31,7 +31,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
+
    <!-- body -->
+
    <body class="main-layout" style="background-size:contain;    background-image: url('images/fundo.jpeg');">
       
       <!-- loader  -->
@@ -106,8 +108,7 @@
                </div>
             </div>
             <div class="col-md-6">
-               <form id="request" class="main_form" action="https://webhook.site/a7dadecd-5dc0-4c8d-8f67-d44fe8870db4" target="blank"
-                method="post" onsubmit="return validarForm()">
+               <form id="formzin" class="main_form">
                   <div class="row">
                      <h1 class="green2">Crie sua conta!</h1>
                      <div class="col-md-12 ">
@@ -134,11 +135,76 @@
                         <textarea class="cadastro" placeholder=" Celular" type="type" Message="Celular">Message </textarea>
                      </div>  -->
                      <div class="col-sm-12">
-                        <button class="send_btn">Cadastrar</button>
+                        <button type="submit" id="cadastrar" class="btn" style="background-color: greenyellow;">Cadastrar</button>
                      </div>
                   </div>
                </form>
-               <script>  //inicio do codigo javaa para o cadrasto
+               <script type="module">
+                  // Import the functions you need from the SDKs you need
+                  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+                  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+                  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"
+                  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+            
+                  // TODO: Add SDKs for Firebase products that you want to use
+                  // https://firebase.google.com/docs/web/setup#available-libraries
+                
+                  // Your web app's Firebase configuration
+                  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                  const firebaseConfig = {
+                    apiKey: "AIzaSyD9T2Hkj9DWtjv_yv2z3jYn53L9HInJUiQ",
+                    authDomain: "diet-c37f9.firebaseapp.com",
+                    databaseURL: "https://diet-c37f9-default-rtdb.firebaseio.com",
+                    projectId: "diet-c37f9",
+                    storageBucket: "diet-c37f9.appspot.com",
+                    messagingSenderId: "486366043365",
+                    appId: "1:486366043365:web:d2d75dfe6d4af249c4080c",
+                    measurementId: "G-3FJ6Z993VC"
+                  };
+                
+                  // Initialize Firebase
+                  const app = initializeApp(firebaseConfig);
+                  const analytics = getAnalytics(app);
+                  const database = getDatabase();
+                  const auth = getAuth();
+                  
+                  
+
+                      let nome = document.getElementById("nome");
+                      let email = document.getElementById("email");
+                      let cpf = document.getElementById("cpf");
+                      let celular = document.getElementById("celular");
+                      let senha = document.getElementById("senha");
+                      let confirm_senha = document.getElementById("confirm_senha");
+          
+                     //  // Verifica se as senhas coincidem
+                     //  if (senha !== confirm_senha) {
+                     //      alert("As senhas não coincidem.");
+                     //      return false; // Impede o envio do formulário
+                     //  }
+          
+                     //  // Verifica se todos os campos estão preenchidos
+                     //  if (nome === "" || email === "" || cpf === "" || celular === "" || senha === "" || confirm_senha === "") {
+                     //      alert("Todos os campos devem ser preenchidos.");
+                     //      return false; // Impede o envio do formulário
+                     //  }
+
+                     let RegisterUser = evt => {
+                        evt.preventDefault();
+
+                        createUserWithEmailAndPassword(auth, email.value, senha.value)
+                        .then((credentials)=>{
+
+                        })
+                        .catch((error)=>{
+                           alert(error.message);
+                           console.log(error.code);
+                           console.log(error.code)
+                        })
+                     }
+                  formzin.addEventListener('submit', RegisterUser);
+                </script>
+               <!-- <script>  //inicio do codigo javaa para o cadrasto
                   function validarForm() {
                       // Obtém os valores dos campos
                       var nome = document.getElementById("nome").value;
@@ -167,7 +233,7 @@
                       return true;
                   }
               </script>   
-              <!--fim do codogo java de cadrasto-->
+              fim do codogo java de cadrasto -->
             </div>
          </div>
       </section>

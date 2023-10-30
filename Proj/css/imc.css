@@ -65,9 +65,9 @@ form label, form legend{
 }
 .input-padrao{
     display: block;
-    margin: 0 0 20px;
-    padding: 10px 25px;
-    width: 50%;
+    margin: 0 0 5px;
+    padding: 10px 20px;
+    width: 70%;
 }
 .input-padrao:hover{
     transform: scale(1.02);
