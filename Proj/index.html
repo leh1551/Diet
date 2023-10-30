@@ -66,23 +66,26 @@
                               <a class="nav-link" href="#">Screenshort</a>
                            </li>
                            -->
-                           <li class="nav-item">
+                           <!-- 
+                              <li class="nav-item">
                               <a class="nav-link" href="perfil.html" target="blank">Perfil </a>
                            </li>
+                           -->
                            <li class="nav-item">
                               <a class="nav-link" href="https://instagram.com/mais_musculos_diet?igshid=NjIwNzIyMDk2Mg==" target="blank">Instagram </a>
                            </li>
+                           
                         </ul>
                         <div class="Call"><button class="botao" onclick="openForm()">Logar</button>
                            <div class="form-popup" id="myForm">
-                              <form action="" class="form-container"  > <!-- precisa realizar ação do form-->
+                              <form  id="loginform" class="form-container"  > <!-- precisa realizar ação do form-->
                                 <h1>Login</h1>
                             
                                 <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Email" name="email" required>
+                                <input id= "emailLogin" type="text" placeholder="Email" name="email" required>
                             
                                 <label for="psw"><b>Senha</b></label>
-                                <input type="password" placeholder="Senha" name="psw" required>
+                                <input id= "senhaLogin" type="password" placeholder="Senha" name="psw" required>
                             
                                 <button type="submit" class="btn">Login</button>
                                 <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
@@ -143,9 +146,8 @@
                   // Import the functions you need from the SDKs you need
                   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
                   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-                  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"
-                  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
-            
+                  import { getDatabase, set, ref, get, child } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"
+                  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
                   // TODO: Add SDKs for Firebase products that you want to use
                   // https://firebase.google.com/docs/web/setup#available-libraries
                 
@@ -167,7 +169,7 @@
                   const analytics = getAnalytics(app);
                   const database = getDatabase();
                   const auth = getAuth();
-                  
+                  const dbref = ref(database)
                   
 
                       let nome = document.getElementById("nome");
@@ -176,25 +178,19 @@
                       let celular = document.getElementById("celular");
                       let senha = document.getElementById("senha");
                       let confirm_senha = document.getElementById("confirm_senha");
-          
-                     //  // Verifica se as senhas coincidem
-                     //  if (senha !== confirm_senha) {
-                     //      alert("As senhas não coincidem.");
-                     //      return false; // Impede o envio do formulário
-                     //  }
-          
-                     //  // Verifica se todos os campos estão preenchidos
-                     //  if (nome === "" || email === "" || cpf === "" || celular === "" || senha === "" || confirm_senha === "") {
-                     //      alert("Todos os campos devem ser preenchidos.");
-                     //      return false; // Impede o envio do formulário
-                     //  }
 
                      let RegisterUser = evt => {
                         evt.preventDefault();
 
                         createUserWithEmailAndPassword(auth, email.value, senha.value)
                         .then((credentials)=>{
-
+                           set(ref(database, 'UsersAuthList/'+credentials.user.uid),{
+                              nomezin: nome.value,
+                              cpfzin: cpf.value,
+                              numero: celular.value
+                           })
+                           alert("Conta criada com sucesso!");
+                           window.location.href = 'index.html'
                         })
                         .catch((error)=>{
                            alert(error.message);
@@ -202,6 +198,33 @@
                            console.log(error.code)
                         })
                      }
+                  
+                     let loginemail = document.getElementById("emailLogin");
+                     
+                     let loginsenha = document.getElementById("senhaLogin");
+                  let LoginUser = evt => {
+                        evt.preventDefault();
+
+                        signInWithEmailAndPassword(auth, loginemail.value, loginsenha.value)
+                        .then((credentials)=>{
+                           get(child(dbref, 'UsersAuthList/'+ credentials.user.uid)).then((snapshot)=>{
+                              if(snapshot.exists){
+                                 sessionStorage.setItem("user.info", JSON.stringify({
+                                    nomezada: snapshot.val().nomezin
+                                 }))
+                                 
+                                 sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                                 window.location.href = 'perfil.html';
+                              }
+                           })
+                        })
+                        .catch((error)=>{
+                           alert(error.message);
+                           console.log(error.code);
+                           console.log(error.code)
+                        })
+                     }
+                  loginform.addEventListener('submit', LoginUser);
                   formzin.addEventListener('submit', RegisterUser);
                 </script>
                <!-- <script>  //inicio do codigo javaa para o cadrasto

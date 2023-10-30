@@ -67,15 +67,16 @@
                               </li>
                               -->
                               <li class="nav-item">
-                                 <a class="nav-link" href="" target="blank">Perfil </a>
+                                 <a class="nav-link" href="" target="blank">IMC </a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="https://instagram.com/mais_musculos_diet?igshid=NjIwNzIyMDk2Mg==" target="blank">Instagram </a>
                               </li>
                            </ul>
+                           <!--
                            <div class="Call"><button class="botao" onclick="openForm()">Logar</button>
                               <div class="form-popup" id="myForm">
-                                 <form action="" class="form-container"  > <!-- precisa realizar ação do form-->
+                                 <form action="" class="form-container"  >  precisa realizar ação do form
                                    <h1>Login</h1>
                                
                                    <label for="email"><b>Email</b></label>
@@ -88,7 +89,9 @@
                                    <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
                                  </form>
                               </div>
+                              
                            </div>
+                        -->
                         </div>
                      </nav>
                   </div>
@@ -107,8 +110,7 @@
                 <section class="formulario">
                     <form action="" id="calculo-imc">
         
-                        <label for="nomesobrenome">Nome e Sobrenome</label>
-                        <input name="nome" type="text" id="nome" class="input-padrao" required placeholder="Digite seu nome">
+                        <label id="nomezinho" for="nomesobrenome">Nome e Sobrenome</label>
         
                         <label for="idade">Idade</label>
                         <input name="idade" type="text" id="idade" class="input-padrao" required placeholder="Digite sua idade">
@@ -148,6 +150,9 @@
 
                         return alert("Não há dieta disponivel para o seu resultado");
                     }
+
+                    let userNome = JSON.parse(sessionStorage.getItem("user.info"));
+                    nomezinho.innerText = "Nome: "+ userNome.nomezada;
                </script>
       </section>
       <!-- end banner -->
